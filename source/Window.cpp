@@ -14,13 +14,4 @@ namespace ACB{
     Window::~Window(){
     
     }
-
-    std::shared_ptr<Window> CreateWindow()
-    {
-#if WIN32
-        return std::make_shared<Win32Window>();
-#elif APPLE
-        return std::make_shared<MacOSWindow>();
-#endif
-    }
 }

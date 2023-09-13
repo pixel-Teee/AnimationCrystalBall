@@ -9,6 +9,4 @@ namespace ACB{
         
         ~Window();
     };
-
-    std::shared_ptr<Window> CreateWindow();
 }

@@ -1,6 +1,8 @@
 #pragma once
 #include "Application.h"
 
+#include <Windows.h>
+
 namespace ACB {
 	class Win32Application : public Application
 	{
@@ -9,6 +11,13 @@ namespace ACB {
 
 		~Win32Application();
 
-		void run();
+		virtual void run() override;
+
+		void setApplicationHandle(HINSTANCE appHandle);
+
+		HINSTANCE getApplicationHandle();
+	private:
+		void registerWin32WindowClass();
+		HINSTANCE m_appHandle;
 	};
 }
