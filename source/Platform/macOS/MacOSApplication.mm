@@ -4,7 +4,9 @@
 
 namespace ACB{
     MacOSApplication::MacOSApplication(){
-        m_application = (__bridge void*)[NSApplication sharedApplication];
+        @autoreleasepool {
+            m_application = (__bridge void*)[NSApplication sharedApplication];
+        }
     }
 
     MacOSApplication::~MacOSApplication(){

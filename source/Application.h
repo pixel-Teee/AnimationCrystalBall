@@ -2,6 +2,8 @@
 
 #include <memory>
 
+#include "Window.h"
+
 namespace ACB{
     class Application{
     public:
@@ -10,6 +12,9 @@ namespace ACB{
         ~Application();
         
         virtual void run();
+        
+    private:
+        std::shared_ptr<Window> m_window;
     };
 
     std::shared_ptr<Application> CreateApplication();

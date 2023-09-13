@@ -9,7 +9,7 @@
 
 namespace ACB{
     Application::Application(){
-    
+        m_window = CreateWindow();
     }
 
     Application::~Application(){
