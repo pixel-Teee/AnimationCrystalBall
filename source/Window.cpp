@@ -2,7 +2,7 @@
 
 #if WIN32
     #include "Platform/Win32/Win32Window.h"
-#elif APPLE
+#elif MACOS
     #include "Platform/macOS/MacOSWindow.h"
 #endif
 

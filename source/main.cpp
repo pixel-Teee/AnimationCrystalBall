@@ -15,7 +15,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 	app->run();
 	return 0;
 }
-#else
+#elif MACOS
 int main()
 {
 	//std::cout << "hello" << std::endl;
@@ -23,6 +23,21 @@ int main()
     app->makeWindow();
 	app->run();
 	return 0;
+}
+#elif IOS
+#include "Platform/IOS/IOSApplication.h"
+
+//#include <UIKit/UIKit.h>
+int main(int argc, char* argv[])
+{
+    //std::cout << "hello" << std::endl;
+    std::shared_ptr<ACB::Application> app = ACB::CreateApplication();
+    app->makeWindow();
+    std::shared_ptr<ACB::IOSApplication> iosApp = std::static_pointer_cast<ACB::IOSApplication>(app);
+    app->run();
+    
+    //UIApplicationMain(argc, argv, nil, nil);
+    return 0;
 }
 #endif
 
