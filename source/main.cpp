@@ -15,12 +15,12 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PWSTR pCmdLine
 	app->run();
 	return 0;
 }
-#elif
+#else
 int main()
 {
 	//std::cout << "hello" << std::endl;
 	std::shared_ptr<ACB::Application> app = ACB::CreateApplication();
-	win32App->makeWindow();
+    app->makeWindow();
 	app->run();
 	return 0;
 }

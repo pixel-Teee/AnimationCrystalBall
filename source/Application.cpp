@@ -4,7 +4,7 @@
     #include "Platform/Win32/Win32Window.h"
     #include "Platform/Win32/Win32Application.h"
 #elif APPLE
-    #include "Platform/Win32/MacOSWindow.h"
+    #include "Platform/macOS/MacOSWindow.h"
     #include "Platform/macOS/MacOSApplication.h"
 #endif
 
