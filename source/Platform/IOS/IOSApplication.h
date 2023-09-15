@@ -14,4 +14,6 @@ namespace ACB{
     private:
         void* m_application;
     };
+
+    int32_t IOSEntryPoint(int argc, char* argv[]);
 }

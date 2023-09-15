@@ -2,6 +2,8 @@
 
 #import <UIKit/UIKit.h>
 
+#include "MyApplicationDelegate.h"
+
 namespace ACB{
     IOSApplication::IOSApplication()
     {
@@ -18,5 +20,12 @@ namespace ACB{
         UIApplication* uiApplication = (__bridge UIApplication*)(m_application);
         //uiApplication->run();
         //UIApplicationMain(0, nullptr, @"", @"");//todo:fix me
+    }
+
+    int32_t IOSEntryPoint(int argc, char* argv[])
+    {
+        //@autoreleasepool {
+            return UIApplicationMain(argc, argv, nil, NSStringFromClass([MyApplicationDelegate class]));
+        //}
     }
 }

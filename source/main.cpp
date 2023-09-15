@@ -31,13 +31,15 @@ int main()
 int main(int argc, char* argv[])
 {
     //std::cout << "hello" << std::endl;
-    std::shared_ptr<ACB::Application> app = ACB::CreateApplication();
-    app->makeWindow();
-    std::shared_ptr<ACB::IOSApplication> iosApp = std::static_pointer_cast<ACB::IOSApplication>(app);
-    app->run();
+    //std::shared_ptr<ACB::Application> app = ACB::CreateApplication();
+    //app->makeWindow();
+    //std::shared_ptr<ACB::IOSApplication> iosApp = std::static_pointer_cast<ACB::IOSApplication>(app);
+    //app->run();
     
     //UIApplicationMain(argc, argv, nil, nil);
-    return 0;
+    
+    return ACB::IOSEntryPoint(argc, argv);
+    //return 0;
 }
 #endif
 
