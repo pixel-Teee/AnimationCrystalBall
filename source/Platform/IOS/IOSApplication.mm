@@ -20,12 +20,15 @@ namespace ACB{
         UIApplication* uiApplication = (__bridge UIApplication*)(m_application);
         //uiApplication->run();
         //UIApplicationMain(0, nullptr, @"", @"");//todo:fix me
+        //NSLog(@"早上好");
+        //UIWindow* uiWindow = (__bridge UIWindow*)(m_window);
+        
     }
 
     int32_t IOSEntryPoint(int argc, char* argv[])
     {
-        //@autoreleasepool {
+        @autoreleasepool {
             return UIApplicationMain(argc, argv, nil, NSStringFromClass([MyApplicationDelegate class]));
-        //}
+        }
     }
 }

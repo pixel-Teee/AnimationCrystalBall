@@ -7,17 +7,18 @@ namespace ACB{
     {
         @autoreleasepool {
             UIWindow* window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen]bounds]];
-            
-            window.backgroundColor = [UIColor whiteColor];
+            //window.backgroundColor = [UIColor whiteColor];
             
             UIViewController* rootController = [[UIViewController alloc]init];
-            
-            window.rootViewController = rootController;
-            
+            //window.rootViewController = rootController;
             [window makeKeyAndVisible];
-            
-            m_window = (__bridge void*)window;
-            m_controller = (__bridge void*)rootController;
+            window.hidden = false;
+            UIView* view = [[UIView alloc]initWithFrame:CGRectMake(200, 200, 200, 200)];
+            view.backgroundColor = [UIColor redColor];
+            [window addSubview:view];
+            m_window = (__bridge_retained void*)window;
+            m_controller = (__bridge_retained void*)rootController;
+            window.rootViewController = rootController;
         }
     }
 
