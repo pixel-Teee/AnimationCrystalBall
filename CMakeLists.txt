@@ -20,6 +20,9 @@ elseif(APPLE)
         file(GLOB PlatformFiles "source/Platform/IOS/*.h" "source/Platform/IOS/*.mm")
         list(APPEND Source ${PlatformFiles})
         add_definitions(-DIOS)
+        #link library
+        #find_library(UIKIT_LIB UIKit)
+        #find_library(QuartzCore_LIB QuartzCore)
     else()
         message("this is macos")
         file(GLOB PlatformFiles "source/Platform/macOS/*.h" "source/Platform/macOS/*.mm")
@@ -30,6 +33,10 @@ elseif(APPLE)
 endif()
 
 add_executable(AnimationCrystalBall ${Source})
+
+#if(IOS)
+#    target_link_libraries(AnimationCrystalBall PRIVATE ${UIKIT_LIB} ${QuartzCore_LIB})
+#endif()
 
 target_include_directories(AnimationCrystalBall PUBLIC
 "source")

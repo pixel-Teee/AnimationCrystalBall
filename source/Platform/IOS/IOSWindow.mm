@@ -14,7 +14,7 @@ namespace ACB{
             [window makeKeyAndVisible];
             window.hidden = false;
             UIView* view = [[UIView alloc]initWithFrame:CGRectMake(200, 200, 200, 200)];
-            view.backgroundColor = [UIColor redColor];
+            view.backgroundColor = [UIColor yellowColor];
             [window addSubview:view];
             m_window = (__bridge_retained void*)window;
             m_controller = (__bridge_retained void*)rootController;
