@@ -39,5 +39,25 @@ int main(int argc, char* argv[])
     return ACB::IOSEntryPoint(argc, argv);
     //return 0;
 }
+#elif ANDROID
+#include <jni.h>
+#include <game-activity/GameActivity.cpp>//important
+#include <game-text-input/gametextinput.cpp>//important
+extern "C" {
+
+#include <game-activity/native_app_glue/android_native_app_glue.c>
+
+void handle_cmd(android_app *pApp, int32_t cmd) {
+
+}
+
+void android_main(struct android_app *pApp) {
+    //pApp->onAppCmd = handle_cmd;
+
+    do{
+
+    }while(1);
+}
+}
 #endif
 

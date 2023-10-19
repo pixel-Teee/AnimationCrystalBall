@@ -1,1 +1,6 @@
 build/
+script/android/.idea
+script/android/.gradle
+script/android/app/build
+script/android/app/.cxx
+script/android/app/.idea

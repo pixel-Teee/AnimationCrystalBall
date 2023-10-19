@@ -29,10 +29,33 @@ elseif(APPLE)
         list(APPEND Source ${PlatformFiles})
         add_definitions(-DMACOS)
     endif()
-
+elseif(ANDROID)
+    file(GLOB PlatformFiles "source/Platform/Android/*.h" "source/Platform/Android/*.cpp")
+    list(APPEND Source ${PlatformFiles})
+    add_definitions(-DANDROID)
 endif()
 
-add_executable(AnimationCrystalBall ${Source})
+if(ANDROID)
+    #message("Hello Android")
+    add_library(AnimationCrystalBall SHARED  ${Source})
+
+    find_library(log-lib log)
+
+    find_package(game-activity REQUIRED CONFIG)
+
+    target_link_libraries(
+            AnimationCrystalBall PUBLIC
+
+            android
+
+            game-activity::game-activity
+
+            ${log-lib}
+    )
+else()
+    add_executable(AnimationCrystalBall ${Source})
+endif()
+
 
 #if(IOS)
 #    target_link_libraries(AnimationCrystalBall PRIVATE ${UIKIT_LIB} ${QuartzCore_LIB})
